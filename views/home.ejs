@@ -3,10 +3,9 @@
 <h1>Home</h1>
 <p><%= startingContent %></p>
 
- 
-
-<% postArray.forEach(function(post) { %>
-    <% console.log(post.title); %>
+ <% postArray.forEach(function(post) { %>
+   <h1> <%= post.title; %></h1>
+   <p><%= post.content; %></p>
 <% }); %>
 
 
