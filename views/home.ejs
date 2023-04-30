@@ -1,11 +1,11 @@
 <%- include("partials/header"); -%>
 
 <h1>Home</h1>
-<span class="truncated"><%= startingContent %></span>
+<p><%= startingContent %></p>
 
  <% postArray.forEach(function(post) { %>
    <h1> <%= post.title; %></h1>
-   <span class="truncated"><%= post.content; %></span>
+   <span class="truncated"><%= post.content; %><a href="/post/<%= post.title %>">Read More</a></span>
 <% }); %>
 
 
