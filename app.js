@@ -48,14 +48,25 @@ app.get("/compose", function(req, res){
   res.render("compose");
 });
 
-app.get("/post/:topic", function(req, res){
-  let requiredContent = "";
-  posts.forEach(post => {
-    if (_.lowerCase(post.title) === _.lowerCase(req.params.topic)) {requiredContent = post.content;}
-    else {console.log("Match Not Found");}
+app.get("/post/:postID", function(req, res){
+  const requestedPostID = req.params.postID;
+  Post.findOne({_id: requestedPostID}).then(function(post){
+
+    res.render("post", {
+      title: post.title,
+      content: post.content
+ });
+}).catch(function(err){
+    console.log(error);
   });
 
-  res.render("post", {topic: _.lowerCase(req.params.topic), content: requiredContent });
+  // let requiredContent = "";
+  // posts.forEach(post => {
+  //   if (_.lowerCase(post.title) === _.lowerCase(req.params.postID)) {requiredContent = post.content;}
+  //   else {console.log("Match Not Found");}
+  // });
+
+  // res.render("post", {topic: _.lowerCase(req.params.postID), content: requiredContent });
 });
 
 app.post("/compose", function(req, res){
