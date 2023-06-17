@@ -29,8 +29,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
-  
-  res.render("home", {startingContent: homeStartingContent, postArray: posts});
+  Post.find({}).then(function(foundPosts){
+    res.render("home", {startingContent: homeStartingContent, postArray: foundPosts});
+  }).catch(function(err){
+    console.log(err);
+  });
 });
 
 app.get("/about", function(req, res){
