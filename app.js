@@ -19,7 +19,7 @@ const postSchema = {
 
 const Post = new mongoose.model("Post", postSchema);
 
-// let posts = [];
+let posts = [];
 
 const app = express();
 
@@ -55,7 +55,7 @@ app.get("/post/:topic", function(req, res){
   res.render("post", {topic: _.lowerCase(req.params.topic), content: requiredContent });
 });
 
-app.post("/compose", function(req, res){\
+app.post("/compose", function(req, res){
   const post = new Post({
     title: req.body.postTitle,
     content: req.body.postContent
