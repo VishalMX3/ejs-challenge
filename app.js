@@ -75,7 +75,11 @@ app.post("/compose", function(req, res){
     content: req.body.postContent
   });
 
-  post.save();
+  post.save().then(function(){
+    res.redirect("/");
+  }).catch(function(err){
+    console.log(err);
+  });
 
   // const post = { 
   //   title: req.body.postTitle,
@@ -84,7 +88,7 @@ app.post("/compose", function(req, res){
 
   // posts.push(post);
   
-  res.redirect("/");
+
 
 });
 
