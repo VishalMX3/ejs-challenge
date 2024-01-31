@@ -5,7 +5,7 @@
 
  <% postArray.forEach(function(post) { %>
    <h1> <%= post.title; %></h1>
-   <span class="truncated"><%= post.content; %><a href="/post/<%= post._id %>">Read More</a></span>
+   <span class="truncated"><%= post.content; %></span><a href="/post/<%= post._id %>">Read More</a>
 <% }); %>
 
 
