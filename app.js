@@ -104,6 +104,11 @@ app.post("/compose", function (req, res) {
   // posts.push(post);
 });
 
+app.post("/delete", function (req, res) {
+  const deletePostID = req.body.postId;
+  res.redirect("/");
+});
+
 app.listen(PORT, function () {
   console.log("Server started on port 5000");
 });

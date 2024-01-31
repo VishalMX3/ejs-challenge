@@ -4,11 +4,16 @@
 <p><%= startingContent %></p>
 
  <% postArray.forEach(function(post) { %>
-  <div class="post-header">
-   <h1> <%= post.title; %></h1>
-   <button>Delete</button>
-  </div>
+<div class="post-header">
+  <h1> <%= post.title; %></h1>
+  <form action="/delete" method="post" >
+   <input type="hidden" name="postId" value="<%= post._id %>">
+   <button type="submit">Delete</button>
+  </form>
+</div>
+  
    <span class="truncated"><%= post.content; %></span><a href="/post/<%= post._id %>">Read More</a>
+  
   
 <% }); %>
 
