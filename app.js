@@ -37,7 +37,6 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
   Post.find({})
     .then(function (foundPosts) {
-      console.log(foundPosts);
       res.render("home", {
         startingContent: homeStartingContent,
         postArray: foundPosts,
