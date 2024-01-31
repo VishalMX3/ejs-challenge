@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT | 5000;
 
 const homeStartingContent =
-  "Hi, I'm Vishal.🙋‍♂️ I'm a blend of tech and creativity, casting a spell where my technical skills seamlessly merge with creative flair to elevate user experiences. Every piece of code transforms into a creative touch, maximizing the magic in the digital world";
+  "Hi, I'm Viishal.🙋‍♂️ I'm a blend of tech and creativity, casting a spell where my technical skills seamlessly merge with creative flair to elevate user experiences. Every piece of code transforms into a creative touch, maximizing the magic in the digital world";
 const aboutContent =
   "This is a Blog Journal Website where one can post a blog post. Compose your blog and let us now your thoughts. ";
 const contactContent =
