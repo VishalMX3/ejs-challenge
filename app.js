@@ -105,8 +105,14 @@ app.post("/compose", function (req, res) {
 });
 
 app.post("/delete", function (req, res) {
-  const deletePostID = req.body.postId;
-  res.redirect("/");
+  const deletePostId = req.body.postId;
+  Post.findByIdAndRemove(deletePostId)
+    .then(function () {
+      res.redirect("/");
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
 });
 
 app.listen(PORT, function () {
