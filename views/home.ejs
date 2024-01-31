@@ -4,8 +4,12 @@
 <p><%= startingContent %></p>
 
  <% postArray.forEach(function(post) { %>
+  <div class="post-header">
    <h1> <%= post.title; %></h1>
+   <button>Delete</button>
+  </div>
    <span class="truncated"><%= post.content; %></span><a href="/post/<%= post._id %>">Read More</a>
+  
 <% }); %>
 
 

@@ -15,6 +15,12 @@
   color: #1abc9c !important;
 }
 
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .compose-button {
   background-color: rgb(185, 240, 255);
 }
